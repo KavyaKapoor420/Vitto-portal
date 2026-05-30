@@ -1,16 +1,11 @@
-
-
-
 const VALID_LANGUAGES = ['Hindi', 'Tamil', 'Telugu', 'Marathi', 'English']
 
-const validateApplication=(body)=>{
+const validateApplication = (body) => {
+  const { name, mobile, amount, purpose, language } = body
 
+  const errors = []
 
-     const {name,mobile,amount,purpose,language}=req.body ;
-
-      const errors=[]
-
-      if (!name || name.trim().length < 2)
+  if (!name || name.trim().length < 2)
     errors.push('name must be at least 2 characters')
 
   if (!mobile || !/^\d{10}$/.test(mobile))
@@ -26,7 +21,6 @@ const validateApplication=(body)=>{
     errors.push(`language must be one of: ${VALID_LANGUAGES.join(', ')}`)
 
   return errors
-
 }
 
-module.exports=validateApplication 
+module.exports = validateApplication

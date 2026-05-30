@@ -3,7 +3,6 @@ const summaryRouter = express.Router()
 const prisma = require('../prisma')
 
 
-// get /api/summary 
 summaryRouter.get('/',async(req ,res)=>{
 
     try{
