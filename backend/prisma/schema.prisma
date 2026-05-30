@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Language {
+  Hindi
+  Tamil
+  Telugu
+  Marathi
+  English
+}
+
+enum Status {
+  pending
+  approved
+  rejected
+}
+
+model Application {
+  id         String   @id @default(uuid())
+  name       String
+  mobile     String
+  amount     Decimal
+  purpose    String
+  language   Language
+  status     Status   @default(pending)
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("applications")
+}
