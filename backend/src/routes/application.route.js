@@ -3,6 +3,7 @@ const express=require('express')
 
 const applicationRouter=express.Router() 
 const prisma=require('../prisma')
+const { getApplication } = require('../controllers/application.controller')
 
 // post /api/applications 
 
@@ -41,3 +42,40 @@ applicationRouter.post('/',async(req,res)=>{
     }
 })
 
+
+// get /api/applications 
+applicationRouter.get("/",getApplication)
+
+//patch /api/applications/:id
+
+applicationRouter.patch("/:id",async(req,res)=>{
+     const {id}=req.params 
+
+     const {status}=req.body 
+
+     const validStatus=['approved','rejected']
+
+     if(!status || !validStatus.includes(status)){
+        return res.status(400).json({error:`status must be 'approved' or 'rejected' `})
+     }
+
+     try{
+         const application=await prisma.application.update({
+            where:{id:id},
+            data:{status:status}
+         })
+         res.json(application)
+
+
+     }catch(err){
+
+        if(err.code==='P2025'){
+            return res.status
+        }
+        console.error(err)
+        res.status(500).json({error:"An error occurred while updating the application"})
+     }
+})
+
+
+module.exports=applicationRouter
