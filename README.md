@@ -1,4 +1,4 @@
-# Vitto — Loan Application Portal
+# Vitto : Loan Application Portal
 
 A full-stack loan application portal built for Vitto's field operations team. Agents can submit borrower loan applications in multiple Indian regional languages, track them on a live dashboard, and approve or reject them in real time.
 
@@ -9,8 +9,13 @@ A full-stack loan application portal built for Vitto's field operations team. Ag
 ---
 
 ## Screenshots
+## Screenshots
 
-> 
+| | |
+|---|---|
+| <img width="600" src="https://github.com/user-attachments/assets/c8a30b48-7e12-4ab0-b290-b8cc0f66d3a2" /> | <img width="600" src="https://github.com/user-attachments/assets/b94de438-75cf-4cf5-bb2f-242966f8bdcd" /> |
+| <img width="600" src="https://github.com/user-attachments/assets/78634539-a473-4c0f-a3c6-586e56124995" /> | <img width="600" src="https://github.com/user-attachments/assets/5fe925a6-36d6-484a-a8c2-83b260436b28" /> |
+
 
 ---
 
